@@ -6,6 +6,8 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
   VersionColumn,
+  BeforeInsert,
+  BeforeUpdate
 } from 'typeorm';
 
 export enum StatusProduto {
@@ -34,8 +36,18 @@ export class Produto {
   @Column({ type:'enum', enum: TipoProduto})
   tipo: TipoProduto;
 
-  @Column({ type: 'enum', enum: StatusProduto, default: StatusProduto.ESGOTADO })
+  @Column({ type: 'enum', enum: StatusProduto })
   status: StatusProduto;
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  atualizarStatusPorQuantidade() {
+    if(this.quantidade <= 0) {
+      this.status = StatusProduto.ESGOTADO;
+    }else {
+      this.status = StatusProduto.EM_ESTOQUE;
+    }
+  }
 
   @VersionColumn({ name: 'versao' })
   versao: number;

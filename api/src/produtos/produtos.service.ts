@@ -1,24 +1,24 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, ConflictException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FindOptionsWhere, Repository } from "typeorm";
+import { FindOptionsWhere, Repository, DataSource } from "typeorm";
 import { CriarProdutoDto } from './dto/criar-produto.dto';
 import { Produto } from './produto.entity';
 import { FiltrarProdutoDto } from './dto/FiltrarProduto.dto';
-
 import { StatusProduto } from './produto.entity';
 import { TipoProduto } from './produto.entity';
-import { QueueAction } from 'rxjs/internal/scheduler/QueueAction';
+
 import { AtualizarProdutoDto } from './dto/atualizar-produto.dto';
+import { Auditoria } from '../auditoria/auditoria.entity';
 
 @Injectable()
 export class ProdutosService {
   constructor(
     @InjectRepository(Produto)
     private readonly repository: Repository<Produto>,
+    private readonly dataSource: DataSource,
   ) { }
 
   listarProdutos(filtros: FiltrarProdutoDto) {
-    this.atualizarStatus();
     const where: FindOptionsWhere<Produto> = {};
 
     if (filtros.nome) {
@@ -39,12 +39,7 @@ export class ProdutosService {
     });
   }
 
-  atualizarStatus() {
-    // console.log(typeof(this.repository))
-  }
-
   async buscarPorId(id: number) {
-    this.atualizarStatus();
     const produto = await this.repository.findOneBy({ id });
 
     if (!produto) {
@@ -56,18 +51,41 @@ export class ProdutosService {
 
   async atualizarProduto(
     id: number,
+    versaoEsperada: number,
+    atorId: number,
     dados: AtualizarProdutoDto,
   ) {
-    const produto: Produto = await this.buscarPorId(id);
+    return this.dataSource.transaction(async (manager: any) => {
+      const produto: Produto = await manager.findOneBy(Produto, { id });
 
-    const produtoAtualizado = { ...produto, ...dados }
-  
-    if (produtoAtualizado.quantidade > 0) {
-      produtoAtualizado.status = StatusProduto.EM_ESTOQUE;
-    }
+      if (!produto) {
+        throw new ConflictException('Produto não encontrado!');
+      }
 
-    this.repository.save(produtoAtualizado);
-    return produtoAtualizado;
+      const produtoAtualizado = { ...produto, ...dados }
+      const resultado = await manager
+        .createQueryBuilder()
+        .update(Produto)
+        .set({ status: produtoAtualizado.quantidade <= 0 ? StatusProduto.ESGOTADO : StatusProduto.EM_ESTOQUE, versao: () => 'versao + 1' })
+        .where('id = :id', { id })
+        .andWhere('versao = :versao', { versao: versaoEsperada })
+        .execute();
+
+      if (resultado.affected !== 1) {
+        throw new ConflictException(
+          'O produto foi alterado, consulte novamente.',
+        );
+      }
+
+      await manager.insert(Auditoria, {
+        atorId,
+        acao: 'Atualização do produto',
+        recursoTipo: 'produto',
+        recursoId: id,
+      });
+
+      return manager.findOneByOrFail(Produto, { id });
+    });
   }
 
   registrarProduto(dto: CriarProdutoDto) {
@@ -85,13 +103,13 @@ export class ProdutosService {
   }
 
   async deletarProduto(id: number) {
-    const produto = this.buscarPorId(id);
+    const produto = await this.buscarPorId(id);
 
     if (!produto) {
       throw new NotFoundException(`Produto não encontrado.`);
     }
 
-    // this.repository.remove(produto);
+    this.repository.remove(produto);
   }
 
 }

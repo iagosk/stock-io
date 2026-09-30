@@ -4,11 +4,12 @@ import { AuthModule } from '../auth/auth.module';
 import { ProdutosController } from './produtos.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Produto } from './produto.entity';
+import { Auditoria } from '../auditoria/auditoria.entity';
 
 @Module({
   imports: [
     AuthModule,
-    TypeOrmModule.forFeature([Produto])
+    TypeOrmModule.forFeature([Produto, Auditoria])
   ],
   controllers: [ProdutosController],
   providers: [ProdutosService],
