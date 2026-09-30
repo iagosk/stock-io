@@ -1,5 +1,6 @@
 import {
   Column,
+  Check,
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
@@ -7,10 +8,19 @@ import {
   VersionColumn,
 } from 'typeorm';
 
-export type StatusProduto = 'Esgotado' | 'Em estoque';
-export type TipoProduto = 'Gelateria' | 'Cozinha' | 'Bebidas' | 'Outros';
+export enum StatusProduto {
+  ESGOTADO = 'Esgotado',
+  EM_ESTOQUE = 'Em estoque',
+};
+export enum TipoProduto {
+  GELATERIA = 'Gelateria',
+  COZINHA = 'Cozinha',
+  BEBIDAS = 'Bebidas',
+  OUTROS = 'Outros'
+};
 
 @Entity({ name: 'produtos' })
+@Check(`"quantidade" >= 0`)
 export class Produto {
   @PrimaryGeneratedColumn()
   id: number;
@@ -18,13 +28,13 @@ export class Produto {
   @Column({ type:'varchar', length: 150 })
   nome: string;
 
-  @Column({ type: 'integer', default: 0 })
+  @Column({ type: 'int', default: 0})
   quantidade: number;
 
-  @Column({ type:'varchar', length: 150 })
+  @Column({ type:'enum', enum: TipoProduto})
   tipo: TipoProduto;
 
-  @Column({ type: 'varchar', length: 150, default: 'Esgotado' })
+  @Column({ type: 'enum', enum: StatusProduto, default: StatusProduto.ESGOTADO })
   status: StatusProduto;
 
   @VersionColumn({ name: 'versao' })

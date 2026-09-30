@@ -1,51 +1,98 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { FindOptionsWhere, Repository } from "typeorm";
+import { CriarProdutoDto } from './dto/criar-produto.dto';
+import { Produto } from './produto.entity';
+import { FiltrarProdutoDto } from './dto/FiltrarProduto.dto';
 
-type StatusProduto = 'Esgotado' | 'Em estoque';
-type TipoProduto = 'Gelateria' | 'Cozinha' | 'Bebidas' | 'Outros';
-type Produto = {
-  id: number;
-  nome: string;
-  quantidade: number;
-  tipo: TipoProduto;
-  status: StatusProduto;
-};
+import { StatusProduto } from './produto.entity';
+import { TipoProduto } from './produto.entity';
+import { QueueAction } from 'rxjs/internal/scheduler/QueueAction';
+import { AtualizarProdutoDto } from './dto/atualizar-produto.dto';
 
 @Injectable()
 export class ProdutosService {
-  constructor() {}
-  private readonly produtos: Produto[] = [
-    { id: 1, nome: 'Açaí', quantidade: 1, tipo: 'Gelateria', status: 'Em estoque' },
-    { id: 2, nome: 'Creme de Tapioca', quantidade: 0, tipo: 'Gelateria', status: 'Em estoque' },
-  ];
+  constructor(
+    @InjectRepository(Produto)
+    private readonly repository: Repository<Produto>,
+  ) { }
 
-  atualizarStatus() {
-    this.produtos.forEach((produto) => {
-      if (produto.quantidade === 0) {
-        produto.status = 'Esgotado'
-      }
+  listarProdutos(filtros: FiltrarProdutoDto) {
+    this.atualizarStatus();
+    const where: FindOptionsWhere<Produto> = {};
+
+    if (filtros.nome) {
+      where.nome = filtros.nome;
+    }
+
+    if (filtros.status) {
+      where.status = filtros.status;
+    }
+
+    if (filtros.tipo) {
+      where.tipo = filtros.tipo;
+    }
+
+    return this.repository.find({
+      where,
+      order: { id: 'ASC' },
     });
   }
 
-  buscarPorId(id: number) {
-    this.atualizarStatus();
-    const produtoEncontrado = this.produtos.find((produto) => produto.id === id);
+  atualizarStatus() {
+    // console.log(typeof(this.repository))
+  }
 
-    if (!produtoEncontrado) {
-      throw new NotFoundException('Produto não encontrado!');
+  async buscarPorId(id: number) {
+    this.atualizarStatus();
+    const produto = await this.repository.findOneBy({ id });
+
+    if (!produto) {
+      throw new NotFoundException("Produto não encontrado");
     }
 
-    return produtoEncontrado;
+    return produto;
   }
 
-  atualizarQuantidade(id: number, quant: number) {
+  async atualizarProduto(
+    id: number,
+    dados: AtualizarProdutoDto,
+  ) {
+    const produto: Produto = await this.buscarPorId(id);
+
+    const produtoAtualizado = { ...produto, ...dados }
+  
+    if (produtoAtualizado.quantidade > 0) {
+      produtoAtualizado.status = StatusProduto.EM_ESTOQUE;
+    }
+
+    this.repository.save(produtoAtualizado);
+    return produtoAtualizado;
+  }
+
+  registrarProduto(dto: CriarProdutoDto) {
+    const produto = this.repository.create({
+      nome: dto.nome,
+      quantidade: dto.quantidade,
+      tipo: dto.tipo,
+    });
+
+    if (produto.quantidade > 0) {
+      produto.status = StatusProduto.EM_ESTOQUE;
+    }
+
+    return this.repository.save(produto);
+  }
+
+  async deletarProduto(id: number) {
     const produto = this.buscarPorId(id);
-    produto.quantidade = quant;
-    return `Quantidade do produto: ${produto.nome} atualizada para: ${produto.quantidade}!`;
+
+    if (!produto) {
+      throw new NotFoundException(`Produto não encontrado.`);
+    }
+
+    // this.repository.remove(produto);
   }
 
-  listarProdutos() {
-    this.atualizarStatus();
-    return this.produtos;
-  }
 }
 

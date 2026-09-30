@@ -1,4 +1,6 @@
-import { IsInt, IsString, MaxLength, MinLength } from "class-validator";
+import { IsInt, IsEnum, IsString, MaxLength, MinLength, Min } from "class-validator";
+
+import { TipoProduto } from "../produto.entity";
 
 export class CriarProdutoDto {
   @IsString()
@@ -7,7 +9,11 @@ export class CriarProdutoDto {
   nome: string;
 
   @IsInt()
-  @MinLength(0)
-  @MaxLength(200)
+  @Min(0, {message: 'A quantidade mínima do produto deve ser 0.'})
   quantidade: number;
+
+  @IsEnum(TipoProduto, {
+    message: 'Tipo de produto inválido.',
+  })
+  tipo: TipoProduto; 
 }

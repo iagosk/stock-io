@@ -4,7 +4,6 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { ProdutosController } from './produtos/produtos.controller';
 import { ProdutosModule } from './produtos/produtos.module';
-import { ProdutosService } from './produtos/produtos.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from "@nestjs/config";
 
@@ -28,6 +27,6 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
     ProdutosModule,
   ],
   controllers: [AppController, ProdutosController],
-  providers: [AppService, ProdutosService],
+  providers: [AppService],
 })
 export class AppModule {}
