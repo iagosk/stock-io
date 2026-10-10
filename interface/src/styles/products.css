@@ -1,0 +1,5 @@
+#products {
+  background-image: url('../../public/team02.jpg');
+  background-size: cover;
+  background-attachment: fixed; 
+}

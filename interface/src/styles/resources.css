@@ -1,0 +1,23 @@
+#resources {
+  background-image: linear-gradient(160deg, #0c0c0c, #090808, #191818, #ff3b0f49);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  color: var(--cor-texto);
+  padding-top: 220px;
+}
+
+.title-resources {
+  /* font-size: 1.8rem; */
+  color: var(--cor-texto);
+  position: relative;
+  animation: text-left 3s ease;
+  gap: 40px;
+}
+
+.resources-content {
+  padding-right: 900px;
+}
+
+ul {
+  padding-left: 310px;
+}

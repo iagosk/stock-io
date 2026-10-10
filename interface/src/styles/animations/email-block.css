@@ -1,0 +1,16 @@
+@keyframes email-block {
+  0% {
+    opacity: 0%;
+    top: -10%;
+  }
+
+  50% {
+    opacity: 40%;
+    top: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+    top: 0%;
+  }
+}
