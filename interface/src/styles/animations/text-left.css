@@ -1,0 +1,16 @@
+@keyframes text-left {
+  0% {
+    opacity: 0%;
+    left: -10%;
+  }
+
+  50% {
+    opacity: 80%;
+    left: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+    left: 0%;
+  }
+}

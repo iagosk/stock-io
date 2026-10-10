@@ -9,7 +9,6 @@ type JwtPayload = {
   cargo: Cargo;
 };
 
-@Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor() {
     const secret = process.env.JWT_SECRET;
