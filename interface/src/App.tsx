@@ -19,6 +19,7 @@ export default function App() {
         </div>
       </header>
       <Main/>
+      <Footer />
     </div>
   )
 }

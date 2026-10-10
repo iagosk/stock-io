@@ -7,7 +7,7 @@
 }
 
 .title-resources {
-  font-size: 1.8rem;
+  /* font-size: 1.8rem; */
   color: var(--cor-texto);
   position: relative;
   animation: text-left 3s ease;

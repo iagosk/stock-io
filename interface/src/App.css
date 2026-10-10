@@ -20,10 +20,14 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--cor-fundo);
   height: 100vh;
-  scroll-behavior: smooth;
 }
 
 #root,
@@ -57,7 +61,7 @@ nav {
 }
 
 .link {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   color: var(--cor-texto);
   text-decoration: none;
   position: relative;
@@ -105,7 +109,7 @@ nav {
 }
 
 ul {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-weight: bold;
 }
 
