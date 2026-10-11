@@ -5,3 +5,12 @@
 .grid-cl-3 {
   grid-template-columns: repeat(3, 1fr); 
 }
+
+.grid-cl-2 {
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+.grid-center {
+  align-items: center;
+  justify-content: center;
+}

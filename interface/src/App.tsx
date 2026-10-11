@@ -1,4 +1,5 @@
 import "./App.css";
+import { NavLink } from "react-router";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
@@ -7,7 +8,7 @@ export default function App() {
     <div className="container">
       <header className="flex flex-row-sb">
         <div className="title">
-          <h1>Sto<span>c</span>k-io<span>.</span></h1>
+          <h2>Sto<span>c</span>k-io<span>.</span></h2>
         </div>
         <nav className="flex">
           <a className="link" href="#home">Início</a>
@@ -15,8 +16,8 @@ export default function App() {
           <a className="link" href="#products">Produtos</a>
         </nav>
         <div className="buttons flex">
-          <button className="button">Sing in</button>
-          <button className="button">Sing up</button>
+          <NavLink to="/login" className="button">Sing in</NavLink>
+          <NavLink to="/register" className="button">Sing up</NavLink>
         </div>
       </header>
       <Main/>

@@ -1,6 +1,6 @@
 export default function Main() {
   return (
-    <main className="grid-cl-3 flex-column-center">
+    <div className="grid-cl-3 flex-column-center">
       <section id="home">
         <div className="introduction flex flex-row-center">
           <div className="text-content">
@@ -16,23 +16,24 @@ export default function Main() {
         </div>
       </section>
       <section className="flex flex-row-center" id="resources">
-        <div className="resources-content flex flex-column-center">
+        <div className="resources-content">
           <div className="title-resources flex">
-            <img className="icon" src="../../public/icons/list-check.png" alt="Icone de Recursos" />
             <h1>Recursos</h1>
-            <br />
-          </div>
-          <ul>
-            <li>Controle de Colaboradores</li>
-            <li>Gestão de Produtos</li>
-            <li>Emissão de Checklist da lista de compras</li>
-            <li>Emissão de arquivo PDF da lista de compras</li>
-          </ul>
+          </div>  
+            <ul className="grid grid-center grid-cl-2">
+              <li>Gestão de colaboradores cadastrados</li>
+              <li>Gestão de produtos cadastrados</li>
+              <li>Emissão de checklist de compras</li>
+              <li>Emissão de arquivo PDF da lista de compras</li>
+              <li>Contagem de produtos em estoque</li>
+              <li>Notificação para sinalizar produto em falta no estoque</li>
+              <li>Lembrete produto em falta no estoque</li>
+            </ul>
         </div>
       </section>
       <section id="products">
         <div className="products"></div>
       </section>
-    </main>
+    </div>
   )
 }

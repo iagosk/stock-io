@@ -6,6 +6,8 @@
 @import url('./styles/animations/email-block.css');
 @import url('./styles/resources.css');
 @import url('./styles/products.css');
+@import url('./styles/footer.css');
+@import url('./styles/form.css');
 
 :root {
   --cor-fundo: #090808;
@@ -40,7 +42,7 @@ header {
   background-image: linear-gradient(160deg, #0c0c0c, #090808, #191818, #ff3b0f49);
   background-size: 300% 300%;
   animation: gradient 10s ease infinite;
-  padding: 30px;
+  padding: 20px;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -48,6 +50,7 @@ header {
 }
 
 .title {
+  padding-left: 10px;
   font-size: 1rem;
   color: var(--cor-texto);
 }
@@ -93,14 +96,15 @@ nav {
 
 .button {
   background-color: #ff3b0f;
+  text-decoration: none;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 6px 15px;
+  border-radius: 7px;
   color: var(--cor-texto);
   cursor: pointer;
   transition: all .5s ease;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: .8rem;
 }
 
 .button:hover {
@@ -111,8 +115,4 @@ nav {
 ul {
   /* font-size: 1.5rem; */
   font-weight: bold;
-}
-
-.icon {
-
 }
