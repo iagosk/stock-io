@@ -5,21 +5,60 @@ form {
     color: var(--cor-texto);
 }
 
-form > p > label > h5 {
+form>p>label>h5 {
     font-weight: normal;
 }
 
-form > p {
-    width: 30%;
+.link-form {
+    text-decoration: none !important;
+    color: rgb(0, 119, 255);
+}
+
+form>p {
+    width: 360px;
     gap: 5px;
 }
 
 .input-form {
+    background-color: rgba(0, 0, 0, 0);
     border: 1px solid gray;
     border-radius: 7px;
-    padding: 5px; 
+    padding: 5px 12px;
+    color: var(--cor-texto);
+    height: 40px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.input-form:focus {
+    outline: 1px solid var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
 }
 
 .button-form {
     padding: 10px 12px !important;
+}
+
+.button-google {
+    background-color: var(--cor-cinza) !important;
+    border: 1px solid gray !important;
+    border-radius: 7px;
+    padding: 5px 12px;
+    color: var(--cor-texto);
+    height: 40px;
+    font-weight: normal !important;
+    font-size: .9rem;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.break {
+    grid-template-columns: 5fr 1fr 5fr;
+    align-items: center;
+    text-align: center;
+}
+
+.break > hr {
+    border-color: var(--cor-cinza);
 }

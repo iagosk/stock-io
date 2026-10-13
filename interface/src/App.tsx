@@ -8,7 +8,7 @@ export default function App() {
     <div className="container">
       <header className="flex flex-row-sb">
         <div className="title">
-          <h2>Sto<span>c</span>k-io<span>.</span></h2>
+          <h1>Sto<span>c</span>k-io<span>.</span></h1>
         </div>
         <nav className="flex">
           <a className="link" href="#home">Início</a>
