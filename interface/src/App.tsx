@@ -14,10 +14,11 @@ export default function App() {
           <a className="link" href="#home">Início</a>
           <a className="link" href="#resources">Recursos</a>
           <a className="link" href="#products">Produtos</a>
+          <a className="link" href="#about">Sobre</a>
         </nav>
         <div className="buttons flex">
           <NavLink to="/login" className="button">Sing in</NavLink>
-          <NavLink to="/register" className="button">Sing up</NavLink>
+          <NavLink to="/signup" className="button">Sing up</NavLink>
         </div>
       </header>
       <Main/>

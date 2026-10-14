@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 export default function LoginView() {
     return (
         <form className="flex flex-column-center">
@@ -5,14 +7,14 @@ export default function LoginView() {
             <h3>Faça login no stock-io</h3>
             <p className="flex flex-column">
                 <label htmlFor="email"><h5>E-mail</h5></label>
-                <input type="email" name="email" id="email" className="input-form" />
+                <input type="email" name="email" id="email" className="input-form" placeholder="Insira o seu endereço de e-mail" required/>
             </p>
             <p className="flex flex-column">
                 <label htmlFor="senha" className="flex flex-row-sb">
                     <h5>Senha</h5>
-                    <a href="#" className="link-form">Esqueceu a senha?</a>
+                    <NavLink to="/password_reset" className="link-form">Esqueceu a senha?</NavLink>
                 </label>
-                <input type="password" name="senha" id="senha" className="input-form" />
+                <input type="password" name="senha" id="senha" className="input-form" placeholder="Insira a sua senha" required/>
             </p>
             <p className="flex flex-column">
                 <input className="button button-form" type="submit" value="Sign In" />
@@ -43,7 +45,7 @@ export default function LoginView() {
             </p>
             <p className="flex flex-row-center">
                 Novo no Stock-io?
-                <a href="#" className="link-form">Crie uma conta</a>
+                <NavLink to="/signup" className="link-form">Crie uma conta</NavLink>
             </p>
         </form>
     )

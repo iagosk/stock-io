@@ -1,0 +1,44 @@
+.dashboard-view {
+  color: var(--cor-texto);
+}
+
+.dashboard-view > header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-view > header > .profile {
+  background-color: var(--cor-fundo);
+  border: 1px solid rgb(39, 39, 39);
+  padding: 14px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  gap: 10px;
+  transition: all .5s ease;
+}
+
+.profile > img {
+  width: 27px;
+}
+
+.dashboard-view > header > .profile:hover {
+  transform: scale(.96);
+}
+
+.dashboard-view > header > nav {
+  background-color: var(--cor-fundo);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.274);
+  padding: 20px 30px;
+  border-radius: 10px;
+  gap: 30px;
+}
+
+.dashboard-view > header > nav > a {
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.dashboard-view > header > nav > a:hover {
+  color: #fff !important;
+}

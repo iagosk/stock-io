@@ -5,6 +5,8 @@
 @import url('./styles/products.css');
 @import url('./styles/footer.css');
 @import url('./styles/form.css');
+@import url('./styles/register-view.css');
+@import url('./styles/dashboard.css');
 
 /* Animações */
 @import url('./styles/animations/gradient.css');

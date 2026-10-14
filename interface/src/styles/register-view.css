@@ -1,0 +1,51 @@
+.register-view {
+  height: 100%;
+  width: 100%;
+}
+
+.image-section {
+  background-image: url('../../public/team03.jpg');
+  background-size: cover;
+}
+
+.content {
+  background-color: rgba(0, 0, 0, 0.931);
+  color: var(--cor-texto);
+  height: 100%;
+  width: 100%;
+  padding: 100px;
+}
+
+form.register-form {
+  background-image: linear-gradient(160deg, #0c0c0c, #090808, #191818, #ff3b0f49);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  width: 100%;
+}
+
+form.register-form > h2 {
+  margin-top: 30px;
+  text-align: start;
+}
+
+form.register-form > p {
+  width: 100%;
+}
+
+form.register-form > p:nth-child(1) {
+  text-align: end;
+}
+
+.content-form {
+  margin-top: 80px;
+  gap: 10px;
+  width: 40vw;
+}
+
+.content-form > p {
+  width: 60%;
+}
+
+.content-form > .button-google {
+  width: 100%;
+}

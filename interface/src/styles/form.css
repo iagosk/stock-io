@@ -5,8 +5,10 @@ form {
     color: var(--cor-texto);
 }
 
-form>p>label>h5 {
+label>h5 {
     font-weight: normal;
+    font-size: 1.2rem;
+    margin: 5px;
 }
 
 .link-form {
@@ -14,9 +16,19 @@ form>p>label>h5 {
     color: rgb(0, 119, 255);
 }
 
+.link-form:hover {
+    text-decoration: underline !important;
+}
+
 form>p {
     width: 360px;
     gap: 5px;
+}
+
+form>h4 {
+    width: 350px;
+    font-weight: normal;
+    text-align: center;
 }
 
 .input-form {
@@ -36,12 +48,14 @@ form>p {
 }
 
 .button-form {
+    height: 40px !important;
+    font-size: .9rem;
     padding: 10px 12px !important;
 }
 
 .button-google {
     background-color: var(--cor-cinza) !important;
-    border: 1px solid gray !important;
+    /* border: 1px solid gray !important; */
     border-radius: 7px;
     padding: 5px 12px;
     color: var(--cor-texto);
@@ -59,6 +73,33 @@ form>p {
     text-align: center;
 }
 
-.break > hr {
+.break>hr {
     border-color: var(--cor-cinza);
+}
+
+.block {
+    background-color: var(--cor-cinza);
+    border-radius: 18px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .6);
+    gap: 18px;
+    overflow: hidden;
+    width: 480px;
+    margin-bottom: 30px;
+}
+
+.block>div {
+    background-color: var(--cor-fundo);
+    padding: 20px 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.block>div>img {
+    width: 30px;
+}
+
+.block>p {
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
