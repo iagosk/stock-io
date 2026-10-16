@@ -1,6 +1,6 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
-export default function DropdownEstoque(props: any) {
+export default function DropdownEstoque() {
   return (
     <>
       <DropdownButton

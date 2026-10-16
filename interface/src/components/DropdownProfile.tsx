@@ -1,6 +1,6 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
-export default function DropdownProfile(props: any) {
+export default function DropdownProfile() {
   return (
     <>
       <DropdownButton

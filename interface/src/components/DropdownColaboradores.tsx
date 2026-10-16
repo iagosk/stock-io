@@ -1,6 +1,6 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
-export default function DropdownColaboradores(props: any) {
+export default function DropdownColaboradores() {
   return (
     <>
       <DropdownButton
