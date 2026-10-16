@@ -1,10 +1,11 @@
 import "./App.css";
+import { NavLink } from "react-router";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="container">
+    <div className="box">
       <header className="flex flex-row-sb">
         <div className="title">
           <h1>Sto<span>c</span>k-io<span>.</span></h1>
@@ -13,10 +14,11 @@ export default function App() {
           <a className="link" href="#home">Início</a>
           <a className="link" href="#resources">Recursos</a>
           <a className="link" href="#products">Produtos</a>
+          <a className="link" href="#about">Sobre</a>
         </nav>
         <div className="buttons flex">
-          <button className="button">Sing in</button>
-          <button className="button">Sing up</button>
+          <NavLink to="/login" className="button">Sing in</NavLink>
+          <NavLink to="/signup" className="button">Sing up</NavLink>
         </div>
       </header>
       <Main/>

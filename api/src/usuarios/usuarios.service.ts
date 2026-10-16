@@ -11,6 +11,4 @@ export interface Usuario {
 }
 
 @Injectable()
-export class UsuariosService {
-  
-}
+export class UsuariosService {  }

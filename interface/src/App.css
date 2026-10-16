@@ -1,15 +1,24 @@
 @import url('./styles/flex-box.css');
 @import url('./styles/grid-box.css');
 @import url('./styles/main.css');
+@import url('./styles/resources.css');
+@import url('./styles/products.css');
+@import url('./styles/footer.css');
+@import url('./styles/form.css');
+@import url('./styles/register-view.css');
+@import url('./styles/dashboard.css');
+
+/* Animações */
 @import url('./styles/animations/gradient.css');
 @import url('./styles/animations/text-left.css');
 @import url('./styles/animations/email-block.css');
-@import url('./styles/resources.css');
-@import url('./styles/products.css');
+@import url('./styles/animations/icon-down.css');
 
 :root {
   --cor-fundo: #090808;
   --cor-principal: #fd5630;
+  --cor-secundaria: #ff3b0f;
+  --cor-cinza: #212830;
   --cor-texto: #fff;
 }
 
@@ -30,8 +39,7 @@ body {
   height: 100vh;
 }
 
-#root,
-.container {
+#root, .box {
   height: 100%;
   width: 100%;
 }
@@ -40,7 +48,7 @@ header {
   background-image: linear-gradient(160deg, #0c0c0c, #090808, #191818, #ff3b0f49);
   background-size: 300% 300%;
   animation: gradient 10s ease infinite;
-  padding: 30px;
+  padding: 20px;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -48,12 +56,13 @@ header {
 }
 
 .title {
+  padding-left: 10px;
   font-size: 1rem;
   color: var(--cor-texto);
 }
 
 span {
-  color: #ff3b0f;
+  color: var(--cor-secundaria);
 }
 
 nav {
@@ -69,12 +78,12 @@ nav {
 }
 
 .link:hover {
-  color: #ff3b0f;
+  color: var(--cor-secundaria);
 }
 
 .link::after {
   content: "";
-  background-color: #ff3b0f;
+  background-color: var(--cor-secundaria);
   height: 3px;
   width: 0;
   position: absolute;
@@ -92,27 +101,24 @@ nav {
 }
 
 .button {
-  background-color: #ff3b0f;
+  background-color: var(--cor-secundaria);
+  text-decoration: none;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 6px 15px;
+  border-radius: 7px;
   color: var(--cor-texto);
   cursor: pointer;
   transition: all .5s ease;
   font-weight: bold;
-  font-size: 1rem;
+  /* font-size: 1rem; */
 }
 
 .button:hover {
-  background-color: #ff3b0f;
+  background-color: var(--cor-secundaria);
   transform: scale(.96);
 }
 
 ul {
   /* font-size: 1.5rem; */
   font-weight: bold;
-}
-
-.icon {
-
 }
