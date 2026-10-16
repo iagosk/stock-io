@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="container">
+    <div className="box">
       <header className="flex flex-row-sb">
         <div className="title">
           <h1>Sto<span>c</span>k-io<span>.</span></h1>
