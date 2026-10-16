@@ -1,6 +1,6 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
-export default function DropdownRelatorios(props: any) {
+export default function DropdownRelatorios() {
   return (
     <>
       <DropdownButton
