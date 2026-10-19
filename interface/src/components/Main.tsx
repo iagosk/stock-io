@@ -1,4 +1,11 @@
 import users_icon from '../../public/icons/users.png';
+import double_down from '../../public/icons/chevron-double-down.png';
+import new_product from '../../public/icons/new-product.png';
+import task_checklist from '../../public/icons/task-checklist.png';
+import file_pdf from '../../public/icons/file-pdf.png';
+import triangle_warning from '../../public/icons/triangle-warning.png';
+import data_report from '../../public/icons/data-report.png';
+import filter_list from '../../public/icons/filter-list.png';
 
 export default function Main() {
   return (
@@ -16,7 +23,7 @@ export default function Main() {
             <input className="button-block" type="submit" value="Cadastrar-se no Stock-io" />
           </form>
           <a href="#resources" className="icon-down" >
-            <img src="../../public/icons/chevron-double-down.png" alt="down icon" />
+            <img src={ double_down } alt="down icon" />
           </a>
         </div>
       </section>
@@ -25,37 +32,37 @@ export default function Main() {
           <div className="title-resources flex">
             <h1>Recursos</h1>
           </div>
-          <ul className="grid grid-center grid-cl-2">
+          <ul className="grid grid-start grid-cl-2">
             <li className="flex">
               <img src={ users_icon } alt="users icon" />
               Gestão de colaboradores cadastrados.
             </li>
             <li className="flex">
-              <img src="../../public/icons/new-product.png" alt="new product icon" />
+              <img src={ new_product } alt="new product icon" />
               Gestão de produtos cadastrados.
             </li>
             <li className="flex">
-              <img src="../../public/icons/task-checklist.png" alt="task-checklist icon" />
+              <img src={ task_checklist } alt="task-checklist icon" />
               Emissão de checklist de compras.
             </li>
             <li className="flex">
-              <img src="../../public/icons/file-pdf.png" alt="file-pdf icon" />
+              <img src={ file_pdf } alt="file-pdf icon" />
               Emissão de arquivo PDF da lista de compras.
             </li>
             <li className="flex">
-              <img src="../../public/icons/task-checklist.png" alt="task-checklist icon" />
+              <img src={ task_checklist } alt="task-checklist icon" />
               Contagem de produtos em estoque.
             </li>
             <li className="flex">
-              <img src="../../public/icons/triangle-warning.png" alt="triangle-warning icon" />
+              <img src={ triangle_warning } alt="triangle-warning icon" />
               Alerta para sinalizar produtos em falta de estoque.
             </li>
             <li className="flex">
-              <img src="../../public/icons/data-report.png" alt="data-report icon" />
-              Emissão de relatórios mensais, de produtos que mais foram vendidos.
+              <img src={ data_report } alt="data-report icon" />
+              Emissão de relatórios mensais.
             </li>
             <li className="flex">
-              <img src="../../public/icons/filter-list.png" alt="filter-list icon" />
+              <img src={ filter_list } alt="filter-list icon" />
               Filtro de produtos por categoria.
             </li>
           </ul>
