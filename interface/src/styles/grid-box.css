@@ -14,6 +14,12 @@
   grid-template-rows: repeat(2, 1fr);
 }
 
+.grid-start {
+  padding-left: 0px !important;
+  align-items: start;
+  justify-items: start;
+}
+
 .grid-center {
   align-items: center;
   justify-items: center;
