@@ -1,5 +1,3 @@
-import { NavLink } from "react-router";
-
 export default function PasswordResetView() {
   return (
     <form className="flex flex-column-center">
