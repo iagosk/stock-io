@@ -1,3 +1,5 @@
+import users_icon from '../../public/icons/users.png';
+
 export default function Main() {
   return (
     <div className="grid-cl-3 flex-column-center">
@@ -25,7 +27,7 @@ export default function Main() {
           </div>
           <ul className="grid grid-center grid-cl-2">
             <li className="flex">
-              <img src="../../public/icons/users.png" alt="users icon" />
+              <img src={ users_icon } alt="users icon" />
               Gestão de colaboradores cadastrados.
             </li>
             <li className="flex">

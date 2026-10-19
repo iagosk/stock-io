@@ -37,7 +37,6 @@ form.register-form > p:nth-child(1) {
 }
 
 .content-form {
-  margin-top: 80px;
   gap: 10px;
   width: 40vw;
 }

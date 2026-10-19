@@ -5,13 +5,10 @@ export default function RegisterView() {
         <div className="register-view grid grid-cl-2">
             <div className="image-section">
                 <div className="content flex flex-column flex-column-start">
-                    <div className="block flex">
-                        <div className="flex"><img src="../../public/icons/triangle-warning.png" alt="icone warning" /></div>
-                        <p>Este formulário é direcionado ao gestor do estabelecimento.</p>
-                    </div>
+                    
                     <div className="block flex">
                         <div className="flex"><img src="../../public/icons/users.png" alt="icone warning" /></div>
-                        <p>Os demais colaboradores serão cadastrados pelo gestor em outra página.</p>
+                        <p>Crie a sua conta de forma gratuita, e em seguida cadastre os seus colaboradores.</p>
                     </div>
                 </div>
             </div>
