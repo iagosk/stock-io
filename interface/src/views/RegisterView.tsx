@@ -1,4 +1,5 @@
 import { NavLink } from "react-router"
+import users_icon from '../../public/icons/users.png';
 
 export default function RegisterView() {
     return (
@@ -7,7 +8,7 @@ export default function RegisterView() {
                 <div className="content flex flex-column flex-column-start">
                     
                     <div className="block flex">
-                        <div className="flex"><img src="../../public/icons/users.png" alt="icone warning" /></div>
+                        <div className="flex"><img src={ users_icon } alt="icone users" /></div>
                         <p>Crie a sua conta de forma gratuita, e em seguida cadastre os seus colaboradores.</p>
                     </div>
                 </div>
