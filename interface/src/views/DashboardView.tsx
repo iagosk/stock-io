@@ -21,38 +21,27 @@ export default function DashboardView() {
       </header>
       <main>
         <section id='inicio' className='flex flex-row-center'>
-          <section className="flex flex-column-center">
-            <div className="content-stock grid grid-cl-2">
-              <div className='image-stock' id='stock'></div>
-              <div className="text-stock flex flex-column-center">
+          <section className="flex flex-row-center">
+            <div className="dashboard-box" id='image-stock'>
+              <div className="content-box flex flex-column flex-column-end">
                 <h2>Estoque</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, quia natus, quidem minus porro explicabo ratione, eaque dolorum deserunt aperiam eligendi quibusdam magni? Fuga repudiandae, necessitatibus veritatis doloribus molestias ipsam.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sunt quos ducimus fugiat soluta enim nostrum dicta eos, consequatur perferendis ex dolores asperiores assumenda, nisi fugit, doloremque aperiam et? Ut?</p>
               </div>
             </div>
-            <div className="content-stock grid grid-cl-2">
-              <div className='image-stock' id='team04'></div>
-              <div className="text-stock flex flex-column-center">
+            <div className="dashboard-box" id='image-team'>
+              <div className="content-box flex flex-column flex-column-end">
                 <h2>Colaboradores</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, quia natus, quidem minus porro explicabo ratione, eaque dolorum deserunt aperiam eligendi quibusdam magni? Fuga repudiandae, necessitatibus veritatis doloribus molestias ipsam.</p>
+                <br />
+                <br />
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sunt quos ducimus fugiat soluta enim nostrum dicta eos, consequatur perferendis ex dolores asperiores assumenda, nisi fugit, doloremque aperiam et? Ut?</p>
               </div>
             </div>
-          </section>
-          <section className="flex flex-column-center">
-            <div className="content-stock grid grid-cl-2">
-              <div className='image-stock' id='reports'></div>
-              <div className="text-stock flex flex-column-center">
+            <div className="dashboard-box" id='image-reports'>
+              <div className="content-box flex flex-column flex-column-end">
                 <h2>Relatórios</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, quia natus, quidem minus porro explicabo ratione, eaque dolorum deserunt aperiam eligendi quibusdam magni? Fuga repudiandae, necessitatibus veritatis doloribus molestias ipsam.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sunt quos ducimus fugiat soluta enim nostrum dicta eos, consequatur perferendis ex dolores asperiores assumenda, nisi fugit, doloremque aperiam et? Ut?</p>
               </div>
             </div>
-            <div className="content-stock grid grid-cl-2">
-              <div className='image-stock' id='stock'></div>
-              <div className="text-stock flex flex-column-center">
-                <h2>Estoque</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, quia natus, quidem minus porro explicabo ratione, eaque dolorum deserunt aperiam eligendi quibusdam magni? Fuga repudiandae, necessitatibus veritatis doloribus molestias ipsam.</p>
-              </div>
-            </div>
-            
           </section>
         </section>
       </main>

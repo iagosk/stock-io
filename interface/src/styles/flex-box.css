@@ -17,8 +17,18 @@
   flex-direction: column; 
 }
 
-.flex-row-center {
+.flex-column-end {
+  align-items: center;
+  justify-content: end;
+}
+
+.flex-row-start {
   align-items: start;
+  justify-content: start;
+}
+
+.flex-row-center {
+  align-items: center;
   justify-content: center;
 }
 
