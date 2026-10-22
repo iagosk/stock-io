@@ -18,7 +18,7 @@ export default function DropdownEstoque() {
   }, [location]);
 
   return (
-    <Dropdown onSelect={(eventKey) => navigate(eventKey)}>
+    <Dropdown onSelect={(eventKey:any) => navigate(eventKey)}>
       <DropdownButton
         title="Estoque"
         variant="#ff3b0f"

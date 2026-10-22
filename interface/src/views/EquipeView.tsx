@@ -62,13 +62,13 @@ export default function ColaboradoresView() {
           </table>
         </div>
       </section>
-      <section id="novo-produto" className="flex flex-row-center">
+      <section id="novo-colaborador" className="flex flex-row-center">
         <form className="flex flex-column-center">
           <p>
             <h3 style={{ textAlign: "start" }}>Novo colaborador</h3>
             <br />
             <label htmlFor="nome"><h5>Nome:</h5></label>
-            <input type="text" name="preco" id="nome" className="input-form" placeholder="Insira o nome do colaborador..." required />
+            <input type="text" name="nome" id="nome" className="input-form" placeholder="Insira o nome do colaborador..." required />
           </p>
           <p>
             <label htmlFor="e-mail"><h5>E-mail:</h5></label>

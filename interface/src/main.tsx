@@ -9,6 +9,7 @@ import EstoqueView from './views/EstoqueView.tsx'
 import EquipeView from './views/EquipeView.tsx'
 import RelatoriosView from './views/RelatoriosView.tsx'
 import Home from './views/Home.tsx'
+import CountView from './views/CountView.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="equipe" element={<EquipeView />} />
         <Route path="estoque" element={<EstoqueView />} />
         <Route path="relatorios" element={<RelatoriosView />} />
+        <Route path="contagem" element={<CountView />} />
       </Route>
     </Routes>
   </BrowserRouter >,

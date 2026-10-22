@@ -2,6 +2,7 @@ import SelectCategorias from "../components/SelectCategorias";
 import SelectCategoriasSearch from "../components/SelectCategoriasSearch";
 import edit_file from '../../public/icons/file-edit.png';
 import trash from '../../public/icons/trash.png';
+import { NavLink } from "react-router";
 
 export default function EstoqueView() {
   return (
@@ -14,7 +15,7 @@ export default function EstoqueView() {
         <div className="search-box flex flex-row-center">
           <div className="inputs-search flex flex-row-center">
             <input type="search" className='input-form input-search' name="buscar-produto" id="buscar-produto" placeholder='Insira o código ou o nome do produto...' />
-            <SelectCategoriasSearch/>
+            <SelectCategoriasSearch />
           </div>
           <input type='button' className="button button-form" id='button-search' value="Buscar" />
         </div>
@@ -65,7 +66,7 @@ export default function EstoqueView() {
         </div>
       </section>
       <section id="novo-produto" className="flex flex-row-center">
-        <form className="flex flex-column-center">
+        <form className="form-produto flex flex-column-center">
           <p>
             <h3 style={{ textAlign: "start" }}>Novo produto</h3>
             <br />
@@ -85,8 +86,14 @@ export default function EstoqueView() {
           </p>
         </form>
       </section>
-      <section id="contagem" className="flex flex-row-center">
-        <h1>Realizar contagem</h1>
+      <section id="contagem" className="flex flex-column-center">
+        <div className="checklist-box flex flex-column-center">
+          <div className="title-estoque flex flex-column-center">
+            <h1>Chec<span>k</span>list<span>.</span></h1>
+            <h4>Checagem semanal do estoque.</h4>
+          </div>
+          <NavLink to="/dashboard/contagem" className="button button-form">Iniciar checagem</NavLink>
+        </div>
       </section>
       <section id="categorias" className="flex flex-row-center">
         <h1>Categorias</h1>
