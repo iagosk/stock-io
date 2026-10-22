@@ -1,7 +1,8 @@
 import DropdownEstoque from '../components/DropdownEstoque';
-import DropdownColaboradores from '../components/DropdownColaboradores';
+import DropdownEquipe from '../components/DropdownEquipe';
 import DropdownRelatorios from '../components/DropdownRelatorios';
 import DropdownProfile from '../components/DropdownProfile';
+import { Outlet, NavLink } from 'react-router';
 
 export default function DashboardView() {
   return (
@@ -10,9 +11,10 @@ export default function DashboardView() {
         <div className="title">
           <h1>Sto<span>c</span>k-io<span>.</span></h1>
         </div>
-        <nav className="flex">
+        <nav className="flex flex-row-center">
+          <NavLink className="dashboard-link" to="/dashboard">Home</NavLink>
           <DropdownEstoque />
-          <DropdownColaboradores />
+          <DropdownEquipe />
           <DropdownRelatorios />
         </nav>
         <div className="profile flex">
@@ -21,28 +23,7 @@ export default function DashboardView() {
       </header>
       <main>
         <section id='inicio' className='flex flex-row-center'>
-          <section className="flex flex-row-center">
-            <div className="dashboard-box" id='image-stock'>
-              <div className="content-box flex flex-column flex-column-end">
-                <h2>Estoque</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sunt quos ducimus fugiat soluta enim nostrum dicta eos, consequatur perferendis ex dolores asperiores assumenda, nisi fugit, doloremque aperiam et? Ut?</p>
-              </div>
-            </div>
-            <div className="dashboard-box" id='image-team'>
-              <div className="content-box flex flex-column flex-column-end">
-                <h2>Colaboradores</h2>
-                <br />
-                <br />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sunt quos ducimus fugiat soluta enim nostrum dicta eos, consequatur perferendis ex dolores asperiores assumenda, nisi fugit, doloremque aperiam et? Ut?</p>
-              </div>
-            </div>
-            <div className="dashboard-box" id='image-reports'>
-              <div className="content-box flex flex-column flex-column-end">
-                <h2>Relatórios</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sunt quos ducimus fugiat soluta enim nostrum dicta eos, consequatur perferendis ex dolores asperiores assumenda, nisi fugit, doloremque aperiam et? Ut?</p>
-              </div>
-            </div>
-          </section>
+          <Outlet />
         </section>
       </main>
     </div>

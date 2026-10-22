@@ -36,3 +36,12 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.flex-row-sa {
+  align-items: center;
+  justify-content: space-around;
+}
+.flex-row-se {
+  align-items: center;
+  justify-content: space-evenly;
+}

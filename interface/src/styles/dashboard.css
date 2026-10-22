@@ -1,5 +1,7 @@
 .dashboard-view {
-  background-color: var(--cor-fundo);
+background-image: linear-gradient(160deg, #0c0c0c, #090808, #191818, #ff3b0f49);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
   color: var(--cor-texto);
 }
 
@@ -31,7 +33,7 @@
 .dashboard-view>header>nav {
   background-color: var(--cor-fundo);
   /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.274); */
-  padding: 10px 20px;
+  padding: 15px 35px;
   border-radius: 10px;
   gap: 30px;
 }
@@ -43,7 +45,7 @@
 }
 
 .dashboard-view>header>nav>a:hover {
-  color: #fff !important;
+  color: #fff;
 }
 
 .button-dropdown>button {
@@ -59,16 +61,32 @@
 }
 
 #inicio > section {
-  gap: 60px;
+  gap: 90px;
   padding: 50px;
+  width: auto !important;
 }
 
 .dashboard-box {
+  text-decoration: none;
+  color: var(--cor-texto);
   background-size: cover;
-  height: 380px;
-  border-radius: 22px;
+  height: 450px;
+  width: 380px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, .8);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.262);
+  transition: all .5s ease;
+}
+
+.dashboard-box:hover {
+  & .content-box {
+    background-color: rgba(0, 0, 0, 0.859);
+
+    & .text-box {
+      opacity: 1;
+    }
+  }
+  transform: scale(.96);
 }
 
 #image-stock {
@@ -83,16 +101,45 @@
   background-image: url('../../public/reports.jpg');
 }
 
+.dashboard-link {
+  color: #fff;
+  text-decoration: none;
+  transition: all .4s ease;
+}
+
+.dashboard-link:hover {
+  color: #ff3b0f !important;
+}
+
 .content-box {
   background-color: rgba(0, 0, 0, 0.58);
   font-weight: bolder;
   height: 100%;
   width: 100%;
-  padding: 40px;
+  transition: all .6s ease;
 }
 
-.content-box > h2 {
+.text-box {
+  height: 100%;
+  padding: 40px;
+  opacity: 0;
+  transition: all .4s ease;
+}
+
+
+.content-box > h3 {
+  background-color: var(--cor-fundo);
   width: 100%;
-  margin-bottom:10px;
   text-align: start;
+  padding: 40px;
+  margin-bottom: 0px !important;
+} 
+
+.view {
+  background-color: var(--cor-fundo)
+}
+
+.title-estoque {
+  width: 38%;
+  margin-bottom: 30px;
 }

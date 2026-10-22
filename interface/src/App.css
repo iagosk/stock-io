@@ -7,6 +7,7 @@
 @import url('./styles/form.css');
 @import url('./styles/register-view.css');
 @import url('./styles/dashboard.css');
+@import url('./styles/table.css');
 
 /* Animações */
 @import url('./styles/animations/gradient.css');
@@ -32,6 +33,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background-color: rgba(0,0,0,0);
 }
 
 body {
