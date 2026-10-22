@@ -17,12 +17,31 @@
   flex-direction: column; 
 }
 
-.flex-row-center {
+.flex-column-end {
+  align-items: center;
+  justify-content: end;
+}
+
+.flex-row-start {
   align-items: start;
+  justify-content: start;
+}
+
+.flex-row-center {
+  align-items: center;
   justify-content: center;
 }
 
 .flex-row-sb {
   align-items: center;
   justify-content: space-between;
+}
+
+.flex-row-sa {
+  align-items: center;
+  justify-content: space-around;
+}
+.flex-row-se {
+  align-items: center;
+  justify-content: space-evenly;
 }

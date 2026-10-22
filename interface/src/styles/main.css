@@ -30,7 +30,7 @@ section {
 }
 
 .introduction, .products {
-  padding-top: 180px;
+  align-items: start;
   background-color: rgba(0, 0, 0, 0.931);
   height: 100%;
   width: 100%;

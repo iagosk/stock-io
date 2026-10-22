@@ -1,11 +1,12 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
+import user_icon from "../../public/icons/user.png";
 
 export default function DropdownProfile() {
   return (
     <>
       <DropdownButton
         title={
-          <img className="profile-icon" src="../../public/icons/user.png" alt="user icon" />
+          <img className="profile-icon" src={user_icon} alt="user icon" />
         }
         variant="#ff3b0f"
         className="button-dropdown"

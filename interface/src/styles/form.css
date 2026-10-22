@@ -31,6 +31,11 @@ form>h4 {
     text-align: center;
 }
 
+select {
+    box-shadow: none !important;
+    outline: none;
+}
+
 .input-form {
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid gray;

@@ -1,0 +1,59 @@
+.area-table {
+  border-radius: 10px;
+  padding: 2px;
+  background-color: var(--cor-cinza);
+}
+
+.categorias-search {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.search-box {
+  background-color: var(--cor-cinza);
+  padding: 10px;
+  width: 715px;
+  border-radius: 10px;
+  margin: 30px;
+  gap: 20px;
+}
+
+.input-search {
+  padding: 25px 15px;
+  background-color: var(--cor-fundo);
+}
+
+#search-categorias, #search-cargos {
+  padding: 13px;
+  color: var(--cor-texto);
+}
+
+.inputs-search {
+  width: 100%;
+  gap: 20px;
+}
+
+table {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+thead > tr {
+  background-color: var(--cor-fundo);
+  overflow: hidden;
+}
+
+th {
+  padding: 15px 30px;
+}
+
+td {
+  border-top: 2px solid #2e3843;
+  padding: 15px 30px;
+}
+
+.table-buttons > img {
+  margin: 10px;
+  cursor: pointer;
+}
