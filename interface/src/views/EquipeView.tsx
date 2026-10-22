@@ -63,7 +63,7 @@ export default function ColaboradoresView() {
         </div>
       </section>
       <section id="novo-colaborador" className="flex flex-row-center">
-        <form className="flex flex-column-center">
+        <form className="form-register flex flex-column-center">
           <p>
             <h3 style={{ textAlign: "start" }}>Novo colaborador</h3>
             <br />

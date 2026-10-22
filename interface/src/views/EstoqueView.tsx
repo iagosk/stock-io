@@ -66,7 +66,7 @@ export default function EstoqueView() {
         </div>
       </section>
       <section id="novo-produto" className="flex flex-row-center">
-        <form className="form-produto flex flex-column-center">
+        <form className="form-register flex flex-column-center">
           <p>
             <h3 style={{ textAlign: "start" }}>Novo produto</h3>
             <br />

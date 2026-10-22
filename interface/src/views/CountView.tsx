@@ -1,7 +1,7 @@
 export default function CountView() {
   return (
-    <>
-      <h1>Count</h1>
-    </>
+    <section className="flex flex-column-center">
+      <div className="box-count"></div>
+    </section>
   )
 }

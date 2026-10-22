@@ -18,7 +18,7 @@ export default function DropdownEquipe() {
     }, [location]);
   
   return (
-    <Dropdown onSelect={(eventKey:any) => navigate(eventKey)}>
+    <Dropdown onSelect={(eventKey: any) => navigate(eventKey || '/dashboard')}>
       <DropdownButton
         title="Equipe"
         variant="#ff3b0f"

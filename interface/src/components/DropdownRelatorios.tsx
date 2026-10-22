@@ -18,7 +18,7 @@ export default function DropdownRelatorios() {
   }, [location]);
 
   return (
-    <Dropdown onSelect={(eventKey:any) => navigate(eventKey)}>
+    <Dropdown onSelect={(eventKey:any) => navigate(eventKey || '/dashboard')}>
       <DropdownButton
         title="Relatórios"
         variant="#ff3b0f"
