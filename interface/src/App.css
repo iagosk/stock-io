@@ -8,6 +8,7 @@
 @import url('./styles/register-view.css');
 @import url('./styles/dashboard.css');
 @import url('./styles/table.css');
+@import url('./styles/count.css');
 
 /* Animações */
 @import url('./styles/animations/gradient.css');

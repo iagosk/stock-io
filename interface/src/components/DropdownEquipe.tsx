@@ -18,16 +18,16 @@ export default function DropdownEquipe() {
     }, [location]);
   
   return (
-    <Dropdown onSelect={(eventKey) => navigate(eventKey)}>
+    <Dropdown onSelect={(eventKey: any) => navigate(eventKey || '/dashboard')}>
       <DropdownButton
         title="Equipe"
         variant="#ff3b0f"
         className="button-dropdown"
         data-bs-theme="dark"
       >
-        <Dropdown.Item className="dropdown-item" eventKey="/dashboard/equipe#novo-colaborador">Novo colaborador</Dropdown.Item>
-        <Dropdown.Divider />
         <Dropdown.Item eventKey="/dashboard/equipe#listar-colaboradores">Listar equipe</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item className="dropdown-item" eventKey="/dashboard/equipe#novo-colaborador">Novo colaborador</Dropdown.Item>
       </DropdownButton>
     </Dropdown>
   );
