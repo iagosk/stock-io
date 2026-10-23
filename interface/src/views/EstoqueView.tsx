@@ -135,7 +135,6 @@ export default function EstoqueView() {
                     <td>Bebidas</td>
                     <td className="table-buttons">
                       <img src={edit_file} alt="ícone de editar" />
-                      <img src={edit_file} alt="ícone de editar" />
                       <img src={trash} alt="ícone de apagar" />
                     </td>
                   </tr>
