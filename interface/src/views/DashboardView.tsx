@@ -7,11 +7,11 @@ import { Outlet, NavLink } from 'react-router';
 export default function DashboardView() {
   return (
     <div className="dashboard-view">
-      <header className="flex flex">
+      <header className="header-dashboard flex flex">
         <div className="title">
           <h1>Sto<span>c</span>k-io<span>.</span></h1>
         </div>
-        <nav className="flex flex-row-center">
+        <nav className="none flex flex-row-center">
           <NavLink className="dashboard-link" to="/dashboard">Home</NavLink>
           <DropdownEstoque />
           <DropdownEquipe />

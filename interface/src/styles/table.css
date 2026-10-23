@@ -18,6 +18,10 @@
   gap: 20px;
 }
 
+#search-categorias {
+  width: 400px;
+}
+
 .input-search {
   padding: 25px 15px;
   background-color: var(--cor-fundo);
@@ -56,4 +60,9 @@ td {
 .table-buttons > img {
   margin: 10px;
   cursor: pointer;
+}
+
+.table-categorias {
+  width: 600px !important;
+  table-layout: auto;
 }

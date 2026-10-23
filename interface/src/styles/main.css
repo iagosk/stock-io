@@ -21,7 +21,6 @@ section {
 }
 
 .text-home {
-  margin-top: 10px;
   color: var(--cor-texto);
   font-size: 1.4rem;
   line-height: .8cm;
@@ -34,7 +33,9 @@ section {
   background-color: rgba(0, 0, 0, 0.931);
   height: 100%;
   width: 100%;
-  padding: 30px;
+  padding:130px;
+  padding-top: 10px;
+  gap: 10%;
 }
 
 .email-block {
@@ -84,7 +85,6 @@ section {
 .text-content {
   position: relative;
   margin-top: 260px;
-  margin-right: 420px;
   font-weight: bold;
   animation: text-left 3s ease;
   transition: all .4s ease;

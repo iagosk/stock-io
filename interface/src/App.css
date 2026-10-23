@@ -10,6 +10,11 @@
 @import url('./styles/table.css');
 @import url('./styles/count.css');
 
+/* Media Queries */
+@import url('./styles/layouts/mobile.css');
+@import url('./styles/layouts/laptop.css');
+@import url('./styles/layouts/desktop.css');
+
 /* Animações */
 @import url('./styles/animations/gradient.css');
 @import url('./styles/animations/text-left.css');
@@ -44,7 +49,7 @@ body {
 
 #root, .box {
   height: 100%;
-  width: 100%;
+  width: 100vw;
 }
 
 header {
