@@ -11,13 +11,15 @@ export default function EstoqueView() {
         <div className="title-estoque flex flex-column-center">
           <h1>Est<span>o</span>que<span>.</span></h1>
           <h4>Gerenciamento dos produtos.</h4>
-        </div>
-        <div className="search-box flex flex-row-center">
-          <div className="inputs-search flex flex-row-center">
-            <input type="search" className='input-form input-search' name="buscar-produto" id="buscar-produto" placeholder='Insira o código ou o nome do produto...' />
-            <SelectCategoriasSearch />
+        <div className="box-stock flex flex-row-center">
+          <div className="search-box flex flex-row-center">
+            <div className="inputs-search flex flex-row-center">
+              <input type="search" className='input-form input-search' name="buscar-produto" id="buscar-produto" placeholder='Insira o código ou o nome do produto...' />
+              <SelectCategoriasSearch />
+            </div>
+            <input type='button' className="button button-form" id='button-search' value="Buscar" />
           </div>
-          <input type='button' className="button button-form" id='button-search' value="Buscar" />
+        </div>
         </div>
         <div className="area-table">
           <table>
@@ -96,7 +98,52 @@ export default function EstoqueView() {
         </div>
       </section>
       <section id="categorias" className="flex flex-row-center">
-        <h1>Categorias</h1>
+        <div className="categorias-box flex flex-column-center">
+          <div className="title-categoria flex flex-column-center">
+            <h1>Ca<span>t</span>egorias<span>.</span></h1>
+            <h4>Catgorias de produtos.</h4>
+            <div className="search-box flex flex-row-center" id="search-categorias">
+              <div className="inputs-search flex flex-row-center">
+                <input type="search" className='input-form input-search' name="criar-categorias" id="buscar-produto" placeholder='Nova categoria...' />
+              </div>
+              <input type='button' className="button button-form" id='button-search' value="Criar" />
+            </div>
+            <div className="area-table" style={{ marginTop: '40px' }}>
+              <table className="table-categorias">
+                <thead>
+                  <tr>
+                    <th>Categoria</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Gelateria</td>
+                    <td className="table-buttons">
+                      <img src={edit_file} alt="ícone de editar" />
+                      <img src={trash} alt="ícone de apagar" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cremes e Sorvetes</td>
+                    <td className="table-buttons">
+                      <img src={edit_file} alt="ícone de editar" />
+                      <img src={trash} alt="ícone de apagar" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Bebidas</td>
+                    <td className="table-buttons">
+                      <img src={edit_file} alt="ícone de editar" />
+                      <img src={edit_file} alt="ícone de editar" />
+                      <img src={trash} alt="ícone de apagar" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </section>
     </section>
   )

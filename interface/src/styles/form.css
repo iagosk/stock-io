@@ -47,6 +47,14 @@ select {
     font-size: 1rem;
 }
 
+option {
+    background-color: var(--cor-fundo);
+}
+
+option:focus {
+    background-color: var(--cor-secundaria) !important;
+}
+
 .input-form:focus {
     outline: 1px solid var(--cor-secundaria);
     border-color: var(--cor-secundaria);
