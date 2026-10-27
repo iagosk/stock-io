@@ -6,8 +6,56 @@
     position: static !important;
   }
 
+  header>.buttons {
+    display: none;
+  }
+
+  .buttons-main {
+    display: flex !important;
+    gap: 20px;
+    flex-direction: column !important;
+  }
+
+  .buttons-main>.button-main {
+    background-color: var(--cor-secundaria);
+    text-decoration: none;
+    border: none;
+    width: 70vw !important;
+    text-align: center;
+    padding: 12px 15px;
+    border-radius: 7px;
+    color: var(--cor-texto);
+    cursor: pointer;
+    transition: all .5s ease;
+    font-weight: bold;
+  }
+
+  .button-main:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(.96) !important;
+  }
+
   #inicio {
     height: auto !important;
+    align-items: center !important;
+    flex-direction: column;
+  }
+
+  .title-home {
+    margin-bottom: 20px;
+    width: 70vw;
+    text-align: start !important;
+  }
+
+  .text-content {
+    width: 100vw !important;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;     
+  }
+  
+  #text-home-mobile {
+    width: 70% !important;
   }
 
   .header-dashboard {
@@ -15,9 +63,25 @@
   }
 
   .icon-down {
-    margin-top: 180px; 
+    margin-top: 180px;
   }
-  
+
+  .text-content {
+    position: static !important;
+    margin-top: 0px !important;
+    font-weight: bold;
+    animation: text-left 3s ease;
+    transition: all .4s ease;
+  }
+
+  .text-home {
+    color: var(--cor-texto);
+    font-size: 1.2rem !important;
+    line-height: auto !important;
+    width: 290px !important;
+    text-align: start;
+  }
+
   .none {
     background-color: red !important;
     display: none !important;
@@ -26,16 +90,20 @@
   .image-section {
     display: none !important;
   }
-  
+
   .buttons {
     padding-top: 20px;
     gap: 60px !important;
   }
-  
+
   ul {
     display: flex !important;
     flex-direction: column;
     gap: 20px;
+  }
+
+  li {
+    width: 360px;
   }
 
   .register-view {
@@ -43,8 +111,19 @@
     flex-direction: column;
   }
 
+  .title-resources {
+    padding-left: 30px;
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .content-form {
-    width: 100%;
+    width: 100vw !important;
   }
 
   .home-dashboard {
@@ -56,11 +135,13 @@
     width: 440px;
   }
 
-  #image-team, #image-stock, #image-reports {
+  #image-team,
+  #image-stock,
+  #image-reports {
     height: 300px !important;
   }
 
-  .content-box > h3 {
+  .content-box>h3 {
     padding: 20px;
   }
 }
