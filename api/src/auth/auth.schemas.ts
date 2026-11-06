@@ -18,3 +18,16 @@ export const signInSchema = z.object({
 
 // Exportação do DTO dedicado para o Schema de login.
 export type SignInDto = z.infer<typeof signInSchema>;
+
+export const emailSchema = z.object({
+  email: z.email(),
+});
+
+export type EmailDto = z.infer<typeof emailSchema>;
+
+export const resetPasswordSchema = z.object({
+  token: z.string(),
+  password: z.string().min(12).max(128),
+});
+
+export type ResetPasswordDto = z.infer<typeof resetPasswordSchema>;

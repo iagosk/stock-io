@@ -6,8 +6,45 @@
     position: static !important;
   }
 
+  header>.buttons {
+    display: none;
+  }
+
+  .buttons-main {
+    display: flex !important;
+    gap: 20px;
+    flex-direction: column !important;
+  }
+
+  .buttons-main>.button-main {
+    background-color: var(--cor-secundaria);
+    text-decoration: none;
+    border: none;
+    width: 40vw;
+    text-align: center;
+    padding: 12px 15px;
+    border-radius: 7px;
+    color: var(--cor-texto);
+    cursor: pointer;
+    transition: all .5s ease;
+    font-weight: bold;
+  }
+
+  .button-main:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(.96) !important;
+  }
+
   #inicio {
     height: auto !important;
+  }
+
+  .text-content {
+    width: 500px;
+  }
+
+  .text-home {
+    width: 460px;
   }
 
   .header-dashboard {

@@ -7,12 +7,13 @@ import { ProdutosModule } from './produtos/produtos.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { UsuariosModule } from './usuarios/usuarios.module';
-import { AuthenticationModule } from '@nestjs/authentication';
+import { AuthenticationModule, google } from '@nestjs/authentication';
 import { FileTemplateEngine, LogMailTransport, MailModule, SmtpTransport } from '@nestjs/mail';
 import { join } from 'node:path';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     MailModule.forRootAsync({
       useFactory: () => ({
         // Your provider in production. In development, each email (links
@@ -30,11 +31,20 @@ import { join } from 'node:path';
           idleTtl: '3d',
         },
         emailVerification: { url: `${process.env.APP_URL}/auth/email/verify ` },
+        passwordReset: { url: `${process.env.APP_URL}/reset-password` },
+        oidc: {
+          callbackUrl: `${process.env.APP_URL}/auth/oidc/:provider/callback`,
+          providers: {
+            google: google({
+              clientId: process.env.GOOGLE_CLIENT_ID!,
+              clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+            }),
+          }
+        },
       }),
     }),
     UsuariosModule,
     AuthModule,
-    ConfigModule.forRoot({ isGlobal: true }),
     // TypeOrmModule.forRootAsync({
     //   inject: [ConfigService],
     //   useFactory: (config: ConfigService) => ({

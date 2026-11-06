@@ -15,6 +15,8 @@ interface UserRow extends Usuario {
 @Injectable()
 export class UsuariosRepository {
   private readonly rows = new Map<string, UserRow>();
+  /** `provider:subject` → user id, e.g. `google:1098...` */
+  private readonly identities = new Map<string, string>();
 
   // Método de criação da linha que será preenchida com os dados do usuário.
   async create(
@@ -77,6 +79,16 @@ export class UsuariosRepository {
   private findRow(email: string) {
     const normalized = normalize(email);
     return [...this.rows.values()].find((row) => row.email === normalized);
+  }
+
+  async findByIdentity(provider: string, subject: string): Promise<Usuario | null> {
+    const id = this.identities.get(`${provider}:${subject}`);
+    return id ? this.findById(id) : null;
+  }
+  
+  async linkIdentity(id: string, provider: string, subject: string): Promise<Usuario | null> {
+    this.identities.set(`${provider}:${subject}`, id);
+    return this.findById(id);
   }
 }
 

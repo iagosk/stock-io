@@ -20,6 +20,7 @@
 @import url('./styles/animations/text-left.css');
 @import url('./styles/animations/email-block.css');
 @import url('./styles/animations/icon-down.css');
+@import url('./styles/animations/top.css');
 
 :root {
   --cor-fundo: #090808;

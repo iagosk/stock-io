@@ -92,7 +92,7 @@ export default function EstoqueView() {
         <div className="checklist-box flex flex-column-center">
           <div className="title-estoque flex flex-column-center">
             <h1>Chec<span>k</span>list<span>.</span></h1>
-            <h4>Checagem semanal do estoque.</h4>
+            <h4>Checagem de estoque.</h4>
           </div>
           <NavLink to="/dashboard/contagem" className="button button-form">Iniciar checagem</NavLink>
         </div>

@@ -6,7 +6,6 @@ export default function RegisterView() {
         <div className="register-view grid grid-cl-2">
             <div className="image-section">
                 <div className="content flex flex-column flex-column-start">
-                    
                     <div className="block flex">
                         <div className="flex"><img src={ users_icon } alt="icone users" /></div>
                         <p>Crie a sua conta de forma gratuita, e em seguida cadastre os seus colaboradores.</p>
