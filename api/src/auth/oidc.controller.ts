@@ -1,23 +1,37 @@
-import { Controller, Get, Param, Query, Redirect } from "@nestjs/common";
+import { Controller, Get, Param, Query, Redirect, Req } from "@nestjs/common";
 import { OidcService, Public } from "@nestjs/authentication";
+import * as express from "express";
 
 @Public()
 @Controller('auth/oidc')
 export class OidcController {
   constructor(private readonly oidcService: OidcService) { }
-  
-  // "Sign in with Google" links here. With ?link=true, "Connect Google"
-  // links the Google account to the signed-in customer instead.
+
   @Get(':provider/login')
   @Redirect()
-  login(@Param('provider') provider: string, @Query('redirectTo') redirectTo?: string, @Query('link') link?: string) {
-    return this.oidcService.start(provider, { redirectTo, link: link === 'true' });
+  login(
+    @Param('provider') provider: string,
+    @Query('redirectTo') redirectTo?: string,
+    @Query('link') link?: string,
+    @Req() request?: express.Request
+  ) {
+    return this.oidcService.start(provider, { redirectTo, link: link === 'true', request });
   }
 
-  // Where Google sends the browser back.
   @Get(':provider/callback')
   @Redirect()
-  callback(@Param('provider') provider: string, @Query() query: Record<string, string>) {
-    return this.oidcService.finish(provider, query);
+  async callback(
+    @Param('provider') provider: string,
+    @Query() query: Record<string, string>,
+    @Req() request: express.Request
+  ) {
+    const redirect = await this.oidcService.finish(provider, query, { request });
+
+    // Se o pacote devolver apenas '/' (rota padrão), forçamos o envio para o Vite
+    if (!redirect?.url || redirect.url === '/') {
+      return { url: 'http://localhost:5173/dashboard' };
+    }
+
+    return redirect;
   }
 }

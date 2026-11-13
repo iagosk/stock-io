@@ -1,19 +1,25 @@
+# syntax=docker/dockerfile:1
 ARG NODE_VERSION=24.14.0-alpine
 
 FROM node:${NODE_VERSION} AS dev
 
 WORKDIR /app
 
-COPY package*.json ./
+# Copia os arquivos de dependência
+COPY package.json package-lock.json ./
 
+# Instala as dependências (incluindo devDependencies necessárias para o dev server)
 RUN npm install
 
+# Copia o restante do código
 COPY . .
 
+# Ajusta as permissões para o usuário não-root 'node'
 RUN chown -R node:node /app
 
 USER node
 
 EXPOSE 5173
 
+# Sobe o servidor de desenvolvimento escutando em todas as interfaces de rede
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

@@ -29,11 +29,15 @@ import { join } from 'node:path';
         session: {
           absoluteTtl: '14d',
           idleTtl: '3d',
+          trustedOrigins: ['http://localhost:5173'],
         },
-        emailVerification: { url: `${process.env.APP_URL}/auth/email/verify ` },
-        passwordReset: { url: `${process.env.APP_URL}/reset-password` },
+        emailVerification: { url: `${process.env.API_URL}/auth/email/verify` },
+        passwordReset: { url: `${process.env.API_URL}/reset-password` },
         oidc: {
-          callbackUrl: `${process.env.APP_URL}/auth/oidc/:provider/callback`,
+          callbackUrl: `${process.env.API_URL}/auth/oidc/:provider/callback`,
+          redirectAfterLogin: 'http://localhost:5173/dashboard',
+          successRedirect: 'http://localhost:5173/dashboard',
+          failureRedirect: 'http://localhost:5173/login',
           providers: {
             google: google({
               clientId: process.env.GOOGLE_CLIENT_ID!,

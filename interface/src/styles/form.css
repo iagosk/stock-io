@@ -69,11 +69,11 @@ option:focus {
     background-color: var(--cor-cinza) !important;
     /* border: 1px solid gray !important; */
     border-radius: 7px;
-    padding: 5px 12px;
+    padding: 8px 12px;
     color: var(--cor-texto);
-    height: 40px;
+    height: 46px;
     font-weight: normal !important;
-    font-size: .9rem;
+    font-size: 1rem;
     align-items: center;
     justify-content: center;
     gap: 7px;
@@ -91,27 +91,43 @@ option:focus {
 
 .block {
     background-color: var(--cor-cinza);
-    border-radius: 18px;
+    border: 5px solid var(--cor-cinza);
+    border-radius: 5px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .6);
     gap: 18px;
     overflow: hidden;
     width: 500px;
     margin-bottom: 30px;
+    padding: 0px;
 }
 
 .block>div {
     background-color: var(--cor-fundo);
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 120px;
     padding: 20px 20px;
     align-items: center;
     justify-content: center;
 }
 
 .block>div>img {
-    width: 30px;
+    width: 35px;
 }
 
 .block>p {
     padding: 12px;
     font-size: 1.2rem;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-button {
+    width: 400px;
 }

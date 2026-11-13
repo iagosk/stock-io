@@ -23,7 +23,7 @@ export class UsuariosRepository {
     email: string,
     { passwordHash = null, emailVerified = false }: { passwordHash?: string | null; emailVerified?: boolean } = {},
   ): Promise<Usuario> {
-    const row: UserRow = { id: String(randomInt(0, 100)), email: normalize(email), emailVerified, roles: ['colaborador'], passwordHash };
+    const row: UserRow = { id: String(randomInt(0, 100)), email: normalize(email), emailVerified, roles: ['administrador'], passwordHash };
     this.rows.set(row.id, row);
     return toUser(row);
   }

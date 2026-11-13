@@ -15,8 +15,8 @@ export class AuthController {
   @Post('sign-up')
   async signUp(@Body({ schema: signUpSchema }) body: SignUpDto) {
     const user = await this.credentialsSerice.register(body.email, body.password);
-    await this.singInService.signIn(user.id, { method: 'password' });
-    await this.emailVerificationService.send(user);
+    // await this.singInService.signIn(user.id, { method: 'password' });
+    // await this.emailVezrificationService.send(user);
     return user;
   }
 
