@@ -15,10 +15,10 @@ export default function LoginView() {
                 email: email,
                 password: password,
             });
-            // console.log("Resposta: ", response.data);
+            console.log("Resposta: ", response.data);
             navigate("/dashboard");
         } catch (error) {
-            // console.error("Erro: ", error);
+            console.error("Erro: ", error);
             setShow(<LoginError/>);
         }
     }
