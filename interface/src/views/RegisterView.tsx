@@ -16,10 +16,10 @@ export default function RegisterView() {
                 email: email,
                 password: password,
             });
-            // console.log("Resposta: ", response.data)
+            console.log("Resposta: ", response.data)
             navigate('/login');
         } catch (error) {
-            // console.error("Erro: ", error);
+            console.error("Erro: ", error);
             setShow(<ErrorSignup />);
         }
     }
