@@ -1,31 +1,60 @@
-import { NavLink } from "react-router";
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router";
+import api from "../services/api";
+import LoginError from "../components/AlertErrorLogin";
 
 export default function LoginView() {
+    const [email, setEmail] = useState<string>('');
+    const navigate = useNavigate();
+    const [password, setPassword] = useState<string>('');
+    const [show, setShow] = useState(<></>);
+
+    const signin: any = async () => {
+        try {
+            const response = await api.post("/auth/sign-in", {
+                email: email,
+                password: password,
+            });
+            // console.log("Resposta: ", response.data);
+            navigate("/dashboard");
+        } catch (error) {
+            // console.error("Erro: ", error);
+            setShow(<LoginError/>);
+        }
+    }
+    
+    const signin_with_google: any = () => {
+        window.location.href = import.meta.env.VITE_GOOGLE_URL + "?redirectTo=https://localhost:5432/dashboard";
+    }
+    
     return (
-        <form className="flex flex-column-center">
-            <h2>Sto<span>c</span>k-io<span>.</span></h2>
-            <h3>Faça login no stock-io</h3>
-            <p className="flex flex-column">
-                <label htmlFor="email"><h5>E-mail</h5></label>
-                <input type="email" name="email" id="email" className="input-form" placeholder="Insira o seu endereço de e-mail" required/>
-            </p>
-            <p className="flex flex-column">
-                <label htmlFor="senha" className="flex flex-row-sb">
-                    <h5>Senha</h5>
-                    <NavLink to="/password_reset" className="link-form">Esqueceu a senha?</NavLink>
-                </label>
-                <input type="password" name="senha" id="senha" className="input-form" placeholder="Insira a sua senha" required/>
-            </p>
-            <p className="flex flex-column">
-                <input className="button button-form" type="submit" value="Sign In" />
-            </p>
-            <p className="break grid">
-                <hr />
-                ou
-                <hr />
-            </p>
-            <p className="flex flex-column">
-                <button className="button button-google flex">
+        <div className="flex flex-column-center">
+            {show}
+            <form className="flex flex-column-center" action={signin}>
+                <h2>Sto<span>c</span>k-io<span>.</span></h2>
+                <h3>Faça login no stock-io</h3>
+                <p className="flex flex-column">
+                    <label htmlFor="email"><h5>E-mail</h5></label>
+                    <input type="email" name="email" id="email" className="input-form" placeholder="Insira o seu endereço de e-mail" value={email} onChange={e => setEmail(e.target.value)} required />
+                </p>
+                <p className="flex flex-column">
+                    <label htmlFor="senha" className="flex flex-row-sb">
+                        <h5>Senha</h5>
+                        <NavLink to="/password_reset" className="link-form">Esqueceu a senha?</NavLink>
+                    </label>
+                    <input type="password" name="senha" id="senha" className="input-form" placeholder="Insira a sua senha" value={password} onChange={e => setPassword(e.target.value)} required />
+                </p>
+                <p className="flex flex-column">
+                    <input className="button button-form" type="submit" value="Sign In" />
+                </p>
+                <p className="break grid">
+                    <hr />
+                    ou
+                    <hr />
+                </p>
+            </form>
+            <p className="google-button flex flex-column">
+                <button type="button" className="button button-google flex" onClick={signin_with_google}>
                     <svg width="16" height="16" data-view-component="true">        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" data-view-component="true" className="octicon color-fg-default">
                         <g clip-path="url(#clip0_643_9687)">
                             <path d="M8.00018 3.16667C9.18018 3.16667 10.2368 3.57333 11.0702 4.36667L13.3535 2.08333C11.9668 0.793333 10.1568 0 8.00018 0C4.87352 0 2.17018 1.79333 0.853516 4.40667L3.51352 6.47C4.14352 4.57333 5.91352 3.16667 8.00018 3.16667Z" fill="#EA4335"></path>
@@ -47,6 +76,6 @@ export default function LoginView() {
                 Novo no Stock-io?
                 <NavLink to="/signup" className="link-form">Crie uma conta</NavLink>
             </p>
-        </form>
+        </div>
     )
 }

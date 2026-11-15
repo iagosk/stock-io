@@ -131,3 +131,18 @@ ul {
   /* font-size: 1.5rem; */
   font-weight: bold;
 }
+
+.title-alert {
+  background-color: rgb(0,0,0,0) !important;
+  color: var(--cor-texto);
+  padding: 20px;
+}
+
+.animationAlert {
+  animation: top 1s ease;
+}
+
+.block-login {
+  width: 450px;
+  margin: 20px !important;
+}
