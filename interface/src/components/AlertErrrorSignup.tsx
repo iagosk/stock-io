@@ -7,7 +7,7 @@ function ErrorSignup() {
       <div className="flex icon-danger"><img src={Danger} alt="icone users" /></div>
       <h5 className='title-alert'>Você já possui uma conta no Stock-io! realize o login para acessá-la.</h5>
     </Alert>
-  );
+  )
 }
 
 export default ErrorSignup;
